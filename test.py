@@ -2,7 +2,7 @@ import cv2
 import pytesseract
 
 # Chargement de l'image en niveaux de gris
-image = cv2.imread("crop_numero_serie.png", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("img_test.png", cv2.IMREAD_GRAYSCALE)
 
 # Configuration optimale pour un numéro de série :
 # - Langue anglaise (eng)
@@ -11,7 +11,7 @@ image = cv2.imread("crop_numero_serie.png", cv2.IMREAD_GRAYSCALE)
 # - Whitelist alphanumérique + tiret
 # - Désactivation des dictionnaires linguistiques
 custom_config = (
-    r"--oem 1 --psm 7 "
+    r"--oem 1 --psm 3 "
     r"-c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ- "
     r"-c load_system_dawg=0 -c load_freq_dawg=0"
 )
